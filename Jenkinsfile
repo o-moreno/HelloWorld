@@ -16,7 +16,7 @@ pipeline {
                 echo 'Code analysis with SonarQube started'
                 withSonarQubeEnv('SonarQube-local') {
                     script {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch.name=${env.BRANCH_NAME} -Dsonar.projectKey=${projectKey} -Dsonar.projectName=${projectName} -Dsonar.sources=${sources}"
+                        bat "${scannerHome}/bin/sonar-scanner -Dsonar.branch.name=${env.BRANCH_NAME} -Dsonar.projectKey=${projectKey} -Dsonar.projectName=${projectName} -Dsonar.sources=${sources}"
                     }
                 }
                 echo 'Code analysis with SonarQube finished'
