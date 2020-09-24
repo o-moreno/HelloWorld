@@ -14,7 +14,7 @@ pipeline {
         stage('Code Analysis') {
             steps {
                 echo 'Code analysis with SonarQube started'
-                withSonarQubeEnv('sonarqube-damm') {
+                withSonarQubeEnv('SonarQube-local') {
                     script {
                         sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch.name=${env.BRANCH_NAME} -Dsonar.projectKey=${projectKey} -Dsonar.projectName=${projectName} -Dsonar.sources=${sources}"
                     }
