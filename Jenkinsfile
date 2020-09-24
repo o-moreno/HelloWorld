@@ -23,10 +23,4 @@ pipeline {
             }
         }
     }
-    post {
-        cleanup{
-            echo 'Finished. Clean Up our workspace'
-            deleteDir()
-        }
-    }
 }
